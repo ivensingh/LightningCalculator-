@@ -1,0 +1,37 @@
+<aura:component >
+    <aura:attribute name="num1" type="integer"></aura:attribute>
+    <aura:attribute name="num2" type="integer"></aura:attribute>
+    <aura:attribute name="res" type="integer"></aura:attribute>
+    <aura:attribute name="IsAdd" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="IsSub" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="IsMul" type="boolean" default="false"></aura:attribute>
+    <aura:attribute name="IsDiv" type="boolean" default="false"></aura:attribute>
+    
+    <lightning:input name="input1" label="Enter First Number" value="{!v.num1}"></lightning:input>
+    <lightning:input name="input2" label="Enter Second Number" value="{!v.num2}"></lightning:input>
+    <hr/>
+    <br/>
+    <aura:if isTrue="{!v.IsAdd}">
+        Addition of two numbers={!v.res}
+    </aura:if>
+    <aura:if isTrue="{!v.IsSub}">
+        Subtraction of two numbers={!v.res}
+    </aura:if>
+    <aura:if isTrue="{!v.IsMul}">
+        Multiplication of two numbers={!v.res}
+    </aura:if>
+    <aura:if isTrue="{!v.IsDiv}">
+        Division of two numbers={!v.res}
+    </aura:if>
+    
+    <hr/>
+    <lightning:buttonGroup>
+        <lightning:button label="Add" onclick="{!c.Add}"></lightning:button>
+        <lightning:button label="Subtract" onclick="{!c.Sub}"></lightning:button>
+        <lightning:button label="Multiply" onclick="{!c.Mul}"></lightning:button>
+        <lightning:button label="Divide" onclick="{!c.Div}"></lightning:button>
+        <lightning:button label="Clear" onclick="{!c.Clear}"></lightning:button>
+    </lightning:buttonGroup>
+    <br/>
+    
+</aura:component>
