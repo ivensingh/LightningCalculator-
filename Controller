@@ -1,0 +1,55 @@
+({
+	Add : function(component, event, helper) {
+		var n1=component.get("v.num1");
+        var n2=component.get("v.num2");
+        var sum=parseInt(n1)+ parseInt(n2);
+        component.set("v.res",sum);
+        component.set("v.IsAdd",true);
+ component.set("v.IsSub",false);
+        component.set("v.IsMul",false);
+        component.set("v.IsDiv",false);
+	},
+    
+Sub : function(component, event, helper) {
+		var n1=component.get("v.num1");
+        var n2=component.get("v.num2");
+        var diff=parseInt(n1) - parseInt(n2);
+        component.set("v.res",diff);
+  component.set("v.IsAdd",false);
+        component.set("v.IsSub",true);
+        component.set("v.IsMul",false);
+        component.set("v.IsDiv",false);
+        
+	},
+ Mul : function(component, event, helper) {
+		var n1=component.get("v.num1");
+        var n2=component.get("v.num2");
+        var mult=parseInt(n1) * parseInt(n2);
+        component.set("v.res",mult);
+component.set("v.IsAdd",false);
+        component.set("v.IsSub",false);
+        component.set("v.IsMul",true);
+        component.set("v.IsDiv",false);
+	},
+
+ Div : function(component, event, helper) {
+		var n1=component.get("v.num1");
+        var n2=component.get("v.num2");
+        var divRes=parseInt(n1)/parseInt(n2);
+        component.set("v.res",divRes);
+ component.set("v.IsAdd",false);
+        component.set("v.IsSub",false);
+        component.set("v.IsMul",false);
+        component.set("v.IsDiv",true);
+},
+     Clear : function(component, event, helper) {
+        component.set("v.num1",0);
+        component.set("v.num2",0);
+        component.set("v.res",0);
+component.set("v.IsAdd",false);
+        component.set("v.IsSub",false);
+        component.set("v.IsMul",false);
+        component.set("v.IsDiv",false);
+	}
+    
+})
